@@ -1,0 +1,11 @@
+.DS_Store
+/node_modules
+/.next
+/out
+/site
+
+# Ignore next-mdx-enhanced cache directory
+.mdx-data
+.nova/Artwork
+.nova/Configuration.json
+package-lock.json

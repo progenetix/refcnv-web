@@ -1,0 +1,13 @@
+$body-size: 14px;
+
+$orange: hsl(14, 100%, 53%) !default;
+$blue: hsl(216, 100%, 53%) !default;
+$primary: $blue;
+$visual-identity-color-progenetix: #ff6f48;
+$visual-identity-color-celllines: rgba(228,66,72,0.8);
+$visual-identity-color: rgba(120,91,189,1);
+
+@import "~bulma/sass/utilities/all";
+
+$footer-padding: 3rem 1.5rem 3rem;
+$footer-background-color: $scheme-main-ter;
