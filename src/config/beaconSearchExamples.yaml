@@ -67,9 +67,6 @@
     The exact variants which were being found can be retrieved through the variant
     handover [H—>O] link.
   parameters:
-    datasetIds:
-      isHidden: false
-      defaultValue: ["progenetix"]
     referenceName:
       isHidden: false
       defaultValue: "refseq:NC_000017.11"
@@ -159,9 +156,6 @@
   description: |
     This example shows a short form version of the CDKN2A deletion example.
   parameters:
-    datasetIds:
-      isHidden: false
-      defaultValue: ["progenetix"]
     cytoBands:
       isHidden: true
     variantQueryDigests:

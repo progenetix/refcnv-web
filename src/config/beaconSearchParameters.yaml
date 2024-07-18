@@ -2,7 +2,7 @@
 parameters:
   datasetIds:
     label: Dataset
-    defaultValue: ["progenetix"]
+    defaultValue: ["refcnv"]
     options:
       - value: refcnv
         label: refCNV
@@ -188,7 +188,7 @@ parameters:
         label: "(Sequence) Variant Calling"
   bioontology:
     label: Cancer Classification(s)
-    infoLink: "https://info.progenetix.org/doc/filters-documentation.html"
+    infoLink: "https://docs.progenetix.org/"
     infoText: |
       Special filter type for disease classification codes. If using multiple
       codes please be aware that probably use of an "OR" filter logic will be appropriate.
@@ -252,7 +252,7 @@ parameters:
   allTermsFilters:
     label: Select Filters
     isMulti: true
-    infoLink: "https://info.progenetix.org/doc/filters-documentation.html"
+    infoLink: "https://docs.progenetix.org/"
     infoText: |
       Add any **filters** to the search. These will usually
       correspond to CURIE values supported by the resource (e.g.
