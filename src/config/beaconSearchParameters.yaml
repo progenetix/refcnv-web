@@ -4,12 +4,8 @@ parameters:
     label: Dataset
     defaultValue: ["progenetix"]
     options:
-      - value: progenetix
-        label: Progenetix
-      - value: cellz
-        label: Cancer Cell Lines Collection
-      - value: examplez
-        label: Test Database - examplez
+      - value: refcnv
+        label: refCNV
     isMulti: true
   assemblyId:
     label: Genome Assembly
