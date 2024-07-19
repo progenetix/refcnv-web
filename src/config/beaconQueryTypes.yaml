@@ -36,10 +36,8 @@
     variantMaxLength:
       isHidden: true
     allTermsFilters:
-      placeholder: [NCIT:C3058]
       isHidden: false
   examples: []
-
 
 - label: "Range"
   infoText: "Query for variants with overlap to a genomic range"
@@ -106,40 +104,6 @@
       isHidden: false
   examples: []
 
-- label: "Sequence"
-  infoText: 'This represents the inputs for a "classic" Beacon SNV query'
-  description: |
-    **Sequence Queries** explore the existence of a specified sequence at a given
-    genomic position. Such queries correspond to the original Beacon queries
-    ("Allele Requests") and are used to match short, precisely defined genomic
-    variants such as SNVs and INDELs.
-    See also the [Beacon documentation](https://docs.genomebeacons.org/variant-queries/#beacon-sequence-queries) for more information.
-  parameters:
-    referenceName:
-      isHidden: false
-    geneId:
-      isHidden: true
-    genomicAlleleShortForm:
-      isHidden: true
-    aminoacidChange:
-      isHidden: true
-    start:
-      isHidden: false
-    end:
-      isHidden: true
-    variantType:
-      defaultValue: "SO:0001059"
-    alternateBases:
-      isHidden: false
-    referenceBases:
-      isHidden: false
-    variantMinLength:
-      isHidden: true
-    variantMaxLength:
-      isHidden: true
-  examples: []
-  img: false
-
 - label: "Sample Data"
   infoText: ""
   description: |
@@ -151,8 +115,6 @@
     See also the [Beacon `filters` documentation](https://docs.genomebeacons.org/filters/#using-filters-in-queries) for more information.        
   img: false
   parameters:
-    datasetIds:
-      defaultValue: ["progenetix"]
     referenceName:
       isHidden: true
     start:
