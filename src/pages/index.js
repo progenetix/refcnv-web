@@ -1,6 +1,6 @@
 import { Layout } from "../components/Layout"
 import Panel from "../components/Panel"
-import { SubsetHistogram } from "../components/SVGloaders"
+import { SubsetHistogram, BiosamplePlot } from "../components/SVGloaders"
 // import { InternalLink }  from "../components/helpersShared/linkHelpers"
 import React from "react"
 import { SITE_DEFAULTS } from "../hooks/api"
@@ -38,7 +38,16 @@ export default function Index() {
       <SubsetHistogram datasetIds={SITE_DEFAULTS.DATASETID} id="DRAGEN-CNV" />
     </p>
     <p>
-        ... under construction ...
+      The repository contains CNV tracks for many of teh 1000 Genomes samples analyzed
+      by different platforms or data pipelines and therefore allows to compare
+      private analysis data to results from these different call sets, to avoid
+      interpretation biases from using reference data with a different analysis
+      profile from the one used in your study. The plot below shows analysis specific
+      CNV tracks for chromosome 13 in the HG01572 sample from the 1000 Genomes set,
+      for several calling pipelines.
+      <BiosamplePlot biosid="onekgbs-HG01572" datasetIds={SITE_DEFAULTS.DATASETID} plotChros="13" />
+      Please be aware that the small size of most CNVs is not correctly represented
+      at this zoom level (overplotting due to limited resolution). 
     </p>
   </Panel>
 </Layout>
