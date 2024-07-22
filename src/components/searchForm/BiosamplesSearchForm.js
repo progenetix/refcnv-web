@@ -225,22 +225,6 @@ export function BeaconSearchForm({
           <div className="columns my-0">
             <InputField
               className={cn(
-                !parameters.genomicAlleleShortForm.isHidden && "column",
-                "py-0 mb-3"
-              )}
-              {...parameters.genomicAlleleShortForm} {...fieldProps}
-            />
-            <InputField
-              className={cn(
-                !parameters.aminoacidChange.isHidden && "column",
-                "py-0 mb-3"
-              )}
-              {...parameters.aminoacidChange} {...fieldProps}
-            />
-          </div>
-          <div className="columns my-0">
-            <InputField
-              className={cn(
                 !parameters.geneId && "column",
                 "py-0 mb-3"
               )}
@@ -316,22 +300,6 @@ export function BeaconSearchForm({
               rules={{
                 validate: checkIntegerRange
               }}
-            />
-            <InputField
-              className={cn(
-                !parameters.referenceBases.isHidden && "column",
-                "py-0 mb-3"
-              )}
-              {...fieldProps}
-              {...parameters.referenceBases}
-            />
-            <InputField
-              className={cn(
-                !parameters.alternateBases.isHidden && "column",
-                "py-0 mb-3"
-              )}
-              {...fieldProps}
-              {...parameters.alternateBases}
             />
           </div>
           <InputField {...parameters.cytoBands} {...fieldProps} />
@@ -666,15 +634,11 @@ function validateForm(formValues) {
   const {
     variantType,
     referenceName,
-    referenceBases,
-    alternateBases,
     start,
     end,
     cytoBands,
     variantQueryDigests,
     geneId,
-    aminoacidChange,
-    genomicAlleleShortForm,
     bioontology,
     clinicalClasses,
     referenceid,
@@ -687,10 +651,8 @@ function validateForm(formValues) {
   const setMissing = (name) =>
     errors.push([name, { type: "manual", message: "Parameter is missing" }])
 
-  if (!referenceName && !referenceBases && !alternateBases && !start && !end && !variantQueryDigests && !cytoBands && !variantType && !geneId && !aminoacidChange && !genomicAlleleShortForm && !bioontology && !referenceid && !allTermsFilters && !freeFilters && !clinicalClasses && !cohorts) {
+  if (!referenceName && !start && !end && !variantQueryDigests && !cytoBands && !variantType && !geneId && !bioontology && !referenceid && !allTermsFilters && !freeFilters && !clinicalClasses && !cohorts) {
     !referenceName && setMissing("referenceName")
-    !referenceBases && setMissing("referenceBases")
-    !alternateBases && setMissing("alternateBases")
     !start && setMissing("start")
     !end && setMissing("end")
     !cytoBands && setMissing("cytoBands")

@@ -21,10 +21,6 @@
     variantType:
       isHidden: false
       defaultValue: "EFO:0030067"
-    alternateBases:
-      isHidden: true
-    referenceBases:
-      isHidden: true
     allTermsFilters:
       isHidden: false
     analysisOperation:
@@ -56,12 +52,6 @@
     variantType:
       isHidden: false
       defaultValue: "EFO:0030067"
-    alternateBases:
-      isHidden: false
-      defaultValue: ""
-    referenceBases:
-      isHidden: false
-      defaultValue: ""
   img: /img/BeaconRangeQuery-graphics.png
 
 - label: "Gene Match"
@@ -72,7 +62,6 @@
     genomic location of a gene, indicated by its symbol (e.g. `CDK2`). Additional
     parameters can _optionally_ be used to make matches more specific:
     - `variantMinLength` and `variantMaxLength` to limit matched CNV sizes
-    - `genomicAlleleShortForm` (e.g. `V600E` with `BRAF`)
     - `variantType` and `alternateBases` to specify variants
   img: /img/BeaconGeneQuery-graphics.png
   parameters:
@@ -97,63 +86,3 @@
     variantType:
       isHidden: false
       defaultValue: "EFO:0030070"
-    alternateBases:
-      isHidden: false
-    referenceBases:
-      isHidden: true
-
-# - label: "Identifier - HeLa"
-#   note: "Samples can be identified through identifiers."
-#   description: |
-#     This example retrieves _HeLa_ instances - including cell lines derived from
-#     _HeLa_ - by _HeLa's_ _cellosaurus_ identifier `cellosaurus:CVCL_0030`.
-#   parameters:
-#     aminoacidChange:
-#       isHidden: true
-#     geneId:
-#       isHidden: true
-#     referenceName:
-#       isHidden: true
-#     start:
-#       isHidden: true
-#     end:
-#       isHidden: true
-#     variantType:
-#       isHidden: true
-#     alternateBases:
-#       isHidden: true
-#     referenceBases:
-#       isHidden: true
-#     allTermsFilters:
-#       isHidden: false
-#       defaultValue: ["cellosaurus:CVCL_0030"]
-
-# - label: "Variant Short Form Example"
-#   note: "This is an experimental example for short form variant(s) support."
-#   description: |
-#     This example shows a short form version of the CDKN2A deletion example.
-#   parameters:
-#     cytoBands:
-#       isHidden: true
-#     variantQueryDigests:
-#       isHidden: false
-#       defaultValue: "9:21000001-21975098--21967753-24000000:DEL"
-#     variantType:
-#       isHidden: true
-#     allTermsFilters:
-#       isHidden: false
-#       defaultValue: [NCIT:C3058]
-#     aminoacidChange:
-#       isHidden: true
-#     geneId:
-#       isHidden: true
-#     referenceName:
-#       isHidden: true
-#     start:
-#       isHidden: true
-#     end:
-#       isHidden: true
-#     alternateBases:
-#       isHidden: true
-#     referenceBases:
-#       isHidden: true

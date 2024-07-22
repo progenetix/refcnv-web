@@ -102,18 +102,6 @@ function QuerySummary({ query }) {
           {query.variantMaxLength}
         </li>
       )}
-      {query.referenceBases && (
-        <li>
-          <small>Ref. Base(s): </small>
-          {query.referenceBases}
-        </li>
-      )}
-      {query.alternateBases && (
-        <li>
-          <small>Alt. Base(s): </small>
-          {query.alternateBases}
-        </li>
-      )}
       {filters.length > 0 && (
         <li>
           <small>Filters: </small>

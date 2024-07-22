@@ -20,16 +20,6 @@ parameters:
     placeholder: MYCN
     infoText: One or more comma concatenated gene symbols (HUGO), e.g. "TP53,CDKN2A".
     isHidden: true
-  aminoacidChange:
-    label: Aminoacid alteration
-    placeholder: V600E
-    infoText: Aminoacid alteration in 1 letter format (e.g. "V600E").
-    isHidden: true
-  genomicAlleleShortForm:
-    label: Genomic HGVS ID 
-    placeholder: NC_000017.11:g.7674232C>G
-    infoText: Genomic HGVSId descriptor.
-    isHidden: true
   referenceName:
     label: Chromosome
     infoText: The chromosome (transmitted as refseq id).
@@ -102,8 +92,8 @@ parameters:
         label: "EFO:0030072 (high-level copy number gain)"
       - value: "EFO:0030066"
         label: "EFO:0030066 (any relative CN variation)"
-      - value: "SO:0001059"
-        label: "SO:0001059 (any sequence alteration - SNV, INDEL...)"
+      # - value: "SO:0001059"
+      #   label: "SO:0001059 (any sequence alteration - SNV, INDEL...)"
   start:
     label: Start or Position
     placeholder: "19000001-21975098"
@@ -141,7 +131,7 @@ parameters:
     infoText: |
       This experimental parameter allows to
       * define a variant request in a concatenated `referenceName:start--end:variantType`
-        or `referenceName:start:referenceBases>alternateBases` format
+        format
       * optionally comma-concatenate 2 or more of such strings, to identify samples
         carrying matches for all of these variations
     isHidden: true
@@ -159,15 +149,6 @@ parameters:
       The maximal length, in bases, of a genomic variant. This parameter can be
       applied to e.g. CNV queries.
     isHidden: true
-  referenceBases:
-    infoText: |
-      The minimal length, in bases, of a genomic variant. This parameter can be
-      applied to e.g. CNV queries.
-    placeholder: "N"
-    label: Reference Base(s)
-  alternateBases:
-    placeholder: "A"
-    label: Alternate Base(s)
   cohorts:
     label: Cohorts
     infoText: >

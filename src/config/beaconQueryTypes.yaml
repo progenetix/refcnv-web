@@ -10,11 +10,7 @@
     See also the [Beacon documentation](https://docs.genomebeacons.org/variant-queries/#beacon-bracket-queries) for more information.
   img: /img/BeaconBracketQuery-limited-match-graphics.png
   parameters:
-    aminoacidChange:
-      isHidden: true
     geneId:
-      isHidden: true
-    genomicAlleleShortForm:
       isHidden: true
     referenceName:
       placeholder: "refseq:NC_000009.12"
@@ -27,10 +23,6 @@
       isHidden: false
     variantType:
       placeholder: "EFO:0030067 (DEL)"
-    alternateBases:
-      isHidden: true
-    referenceBases:
-      isHidden: true
     variantMinLength:
       isHidden: true
     variantMaxLength:
@@ -53,19 +45,11 @@
       isHidden: false
     geneId:
       isHidden: true
-    genomicAlleleShortForm:
-      isHidden: true
-    aminoacidChange:
-      isHidden: true
     start:
       isHidden: false
     end:
       isHidden: false
     variantType:
-      isHidden: false
-    alternateBases:
-      isHidden: false
-    referenceBases:
       isHidden: false
   examples: []
 
@@ -80,12 +64,8 @@
     See also the [Beacon documentation](https://docs.genomebeacons.org/variant-queries/#beacon-geneid-queries) for more information.    
   img: /img/BeaconGeneQuery-graphics.png
   parameters:
-    aminoacidChange:
-      isHidden: true
     geneId:
       isHidden: false
-    genomicAlleleShortForm:
-      isHidden: true
     referenceName:
       isHidden: true
     start:
@@ -97,10 +77,6 @@
     variantMaxLength:
       isHidden: false
     variantType:
-      isHidden: false
-    alternateBases:
-      isHidden: false
-    referenceBases:
       isHidden: false
   examples: []
 
@@ -122,10 +98,6 @@
     end:
       isHidden: true
     variantType:
-      isHidden: true
-    alternateBases:
-      isHidden: true
-    referenceBases:
       isHidden: true
     bioontology:
       isHidden: false
@@ -163,10 +135,6 @@
       isHidden: true
     end:
       isHidden: true
-    alternateBases:
-      isHidden: true
-    referenceBases:
-      isHidden: true
     bioontology:
       isHidden: true
     clinicalClasses:
@@ -189,11 +157,7 @@
   infoText: "Display all form fields"
   img: false
   parameters:
-    aminoacidChange:
-      isHidden: false
     geneId:
-      isHidden: false
-    genomicAlleleShortForm:
       isHidden: false
     referenceName:
       isHidden: false
@@ -208,10 +172,6 @@
     variantMaxLength:
       isHidden: false
     variantType:
-      isHidden: false
-    alternateBases:
-      isHidden: false
-    referenceBases:
       isHidden: false
     bioontology:
       isHidden: false
