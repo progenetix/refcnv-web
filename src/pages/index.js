@@ -1,5 +1,6 @@
 import { Layout } from "../components/Layout"
 import Panel from "../components/Panel"
+import { Admonition } from "../components/Admonitions"
 import { SubsetHistogram, BiosamplePlot } from "../components/SVGloaders"
 // import { InternalLink }  from "../components/helpersShared/linkHelpers"
 import React from "react"
@@ -22,6 +23,17 @@ export default function Index() {
   return (
 <Layout title="refCNV" headline="Genomic Copy Number Variation (CNV) data from reference samples">
   <Panel className="content">
+        <Admonition
+          title="Under Construction"
+          content='
+          <p>
+            Thiks site is currently under construction, with contributions by
+            groups from the University of Zurich and Erasmus MC. Neither data
+            content nor representation have been finalized. PLEASE DO NOT USE
+            FOR ANY RESEARCH OR REFERENCE PURPOSES!
+          </p>'
+        />
+
     <p>
       Frequency profiles of regional
       genomic gains and losses for all categories (diagnostic entity,
