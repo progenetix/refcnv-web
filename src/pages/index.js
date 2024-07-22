@@ -27,7 +27,7 @@ export default function Index() {
           title="Under Construction"
           content='
           <p>
-            Thiks site is currently under construction, with contributions by
+            This site is currently under construction, with contributions by
             groups from the University of Zurich and Erasmus MC. Neither data
             content nor representation have been finalized. PLEASE DO NOT USE
             FOR ANY RESEARCH OR REFERENCE PURPOSES!
