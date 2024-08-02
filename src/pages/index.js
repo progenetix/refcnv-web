@@ -50,7 +50,7 @@ export default function Index() {
       <SubsetHistogram datasetIds={SITE_DEFAULTS.DATASETID} id="DRAGEN-CNV" />
     </p>
     <p>
-      The repository contains CNV tracks for many of teh 1000 Genomes samples analyzed
+      The repository contains CNV tracks for many of the 1000 Genomes samples, analyzed
       by different platforms or data pipelines and therefore allows to compare
       private analysis data to results from these different call sets, to avoid
       interpretation biases from using reference data with a different analysis
