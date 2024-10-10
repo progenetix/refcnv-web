@@ -403,7 +403,7 @@ export function useGeneSymbol({ geneId }) {
 }
 
 export function subsetHistoBaseLink(id, datasetIds) {
-  return `${SITE_DEFAULTS.API_PATH}services/collationplots/?datasetIds=${datasetIds}&id=${id}`
+  return `${SITE_DEFAULTS.API_PATH}services/collationplots/${id}/?datasetIds=${datasetIds}`
 }
 
 // the targets are resolved by `bycon` (bycon/services/ids.py)
