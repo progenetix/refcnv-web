@@ -9,7 +9,7 @@ import useDebounce from "../../hooks/debounce"
 // import { min } from "lodash"
 import { filterNode } from "./tree"
 
-const ROW_HEIGHT = 30
+const ROW_HEIGHT = 28
 
 export function SubsetsTree({
   tree,
@@ -26,7 +26,7 @@ export function SubsetsTree({
     filteredTree,
     debouncedSearchInput
   } = useFilterTree(tree)
-  const [levelSelector, setLevelSelector] = useState(2)
+  const [levelSelector, setLevelSelector] = useState(3)
 
   // console.log(filteredTree)
 
@@ -165,7 +165,6 @@ function Tree({
 // Node component receives all the data we created in the `treeWalker` +
 // internal openness state (`isOpen`), function to change internal openness
 // state (`toggle`) and `style` parameter that should be added to the root div.
-
 function Node({
   data: { isLeaf, subsetId, subset, nestingLevel },
   treeData: {

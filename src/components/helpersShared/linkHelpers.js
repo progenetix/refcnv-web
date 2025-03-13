@@ -17,16 +17,7 @@ export function ExternalLink({ href, label, onClick }) {
   )
 }
 
-export function BeaconRESTLink({ entryType, idValue, responseType, datasetIds, label, output }) {
-  const responseTypeOpt = responseType ? `/${responseType}` : ""
-  const outputOpt = output ? `&output=${output}` : ""
-
-  return <InternalLink
-      href={`/beacon/${entryType}/${idValue}${responseTypeOpt}/?datasetIds=${datasetIds}${outputOpt}`}
-      label={label}
-    />
-}
-
+// TODO: This cries for a template / yaml ... and a better name
 export function ReferenceLink(externalReference) {
   if (externalReference.id.includes("cellosaurus:")) {
     return (

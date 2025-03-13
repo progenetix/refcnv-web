@@ -7,7 +7,7 @@ import { BeaconRESTLink, InternalLink } from "../components/helpersShared/linkHe
 
 import { Loader } from "../components/Loader"
 import { withUrlQuery } from "../hooks/url-query"
-import { Layout } from "../components/Layout"
+import { Layout } from "../site-specific/Layout"
 
 const itemColl = "analyses"
 // const exampleId = "pgxcs-kftvlijb"

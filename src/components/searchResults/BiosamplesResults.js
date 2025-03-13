@@ -25,16 +25,30 @@ export function BiosamplesResults({ response, isLoading, error, query }) {
 }
 
 function AlleleResponses({ biosampleResponseSets, responseMeta, query }) {
-  if (biosampleResponseSets?.[0].resultsCount < 1) {
-    return (
+  return biosampleResponseSets.map((r, i) => (
+    <>
+    {r.resultsCount > 0 && (
+     <DatasetResultBox key={i} data={r} responseMeta={responseMeta} query={query} />
+    )
+    }
+    {r.resultsCount < 1 && (
+     <NoResults data={r}  />
+    )
+    }
+    </>
+  ))
+}
+
+function NoResults({ data: responseSet}) {
+  const {id} = responseSet
+  return (
+   <div className="box">
+      <h2 className="subtitle has-text-dark">{id}</h2>
       <div className="notification">
         No results could be found for this query.
       </div>
-    )
-  }
-  return biosampleResponseSets.map((r, i) => (
-    <DatasetResultBox key={i} data={r} responseMeta={responseMeta} query={query} />
-  ))
+    </div>
+  )
 }
 
 function QuerySummary({ query }) {
@@ -84,6 +98,24 @@ function QuerySummary({ query }) {
           {query.end}
         </li>
       )}
+      {query.mateName && (
+        <li>
+          <small>Adjacent Chro: </small>
+          {query.mateName}
+        </li>
+      )}
+      {query.mateStart && (
+        <li>
+          <small>Adj. Start: </small>
+          {query.mateStart}
+        </li>
+      )}
+      {query.mateEnd && (
+        <li>
+          <small>Adj. End: </small>
+          {query.mateEnd}
+        </li>
+      )}
       {query.variantType && (
         <li>
           <small>Type: </small>
@@ -100,6 +132,18 @@ function QuerySummary({ query }) {
         <li>
           <small>Max. Length: </small>
           {query.variantMaxLength}
+        </li>
+      )}
+      {query.referenceBases && (
+        <li>
+          <small>Ref. Base(s): </small>
+          {query.referenceBases}
+        </li>
+      )}
+      {query.alternateBases && (
+        <li>
+          <small>Alt. Base(s): </small>
+          {query.alternateBases}
         </li>
       )}
       {filters.length > 0 && (

@@ -10,7 +10,7 @@ import { BeaconRESTLink, InternalLink, ReferenceLink } from "../components/helpe
 import { WithData } from "../components/Loader"
 import { withUrlQuery } from "../hooks/url-query"
 import { AncestryData } from "../components/AncestryData"
-import { Layout } from "../components/Layout"
+import { Layout } from "../site-specific/Layout"
 import { ShowJSON } from "../components/RawData"
 import { AnalysisHistogram } from "../components/SVGloaders"
 import { pluralizeWord }  from "../components/helpersShared/labelHelpers"

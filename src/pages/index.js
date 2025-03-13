@@ -1,4 +1,4 @@
-import { Layout } from "../components/Layout"
+import { Layout } from "../site-specific/Layout"
 import Panel from "../components/Panel"
 import { Admonition } from "../components/Admonitions"
 import { SubsetHistogram, BiosamplePlot } from "../components/SVGloaders"

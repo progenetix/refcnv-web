@@ -3,7 +3,7 @@ import cn from "classnames"
 import { FaBars, FaTimes } from "react-icons/fa"
 import { ErrorBoundary } from "react-error-boundary"
 import Head from "next/head"
-import {ErrorFallback, MenuInternalLinkItem} from "./MenuHelpers"
+import {ErrorFallback, MenuInternalLinkItem} from "../components/MenuHelpers"
 import { SITE_DEFAULTS, THISYEAR } from "../hooks/api"
 
 export function Layout({ title, headline, children }) {
@@ -52,7 +52,7 @@ export function Layout({ title, headline, children }) {
       </main>
       <footer className="footer">
         <div className="content container has-text-centered">
-          © 2024 - {THISYEAR} refCNV Genomics Information Resource by
+          © 2000 - {THISYEAR} refCNV Cancer Genomics Information Resource by
           the{" "}
           <a href={SITE_DEFAULTS.ORGSITELINK}>
             Computational Oncogenomics Group
@@ -73,7 +73,7 @@ export function Layout({ title, headline, children }) {
           </a>
           <br />
           No responsibility is taken for the correctness of the data presented
-          nor the results achieved with the Progenetix tools.
+          nor the results achieved with the refCNV tools.
         </div>
       </footer>
     </div>
@@ -105,6 +105,10 @@ function Side({ onClick }) {
           }
         />
         <MenuInternalLinkItem href={SITE_DEFAULTS.MASTERDOCLINK} label="Documentation" />
+        <MenuInternalLinkItem
+          href={SITE_DEFAULTS.ORGSITELINK}
+          label="Baudisgroup @ UZH"
+        />
       </ul>
     </div>
   )
