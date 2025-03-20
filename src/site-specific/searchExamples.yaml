@@ -74,9 +74,6 @@
     datasetIds:
       isHidden: false
       defaultValue: ["refcnv"]
-    datasetIds:
-      isHidden: false
-      defaultValue: ["refcnv"]
     geneId:
       isHidden: false
       defaultValue: CDK2
