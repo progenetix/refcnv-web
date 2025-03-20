@@ -2,7 +2,6 @@
 parameters:
   datasetIds:
     label: Dataset
-    defaultValue: ["refcnv"]
     options:
       - value: progenetix
         label: Progenetix cancer genome variants
