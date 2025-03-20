@@ -92,6 +92,10 @@ function Side({ onClick }) {
       </a>
       <ul className="Layout__side__items">
         <MenuInternalLinkItem
+          href="/subsets/platform-subsets"
+          label="CNV Profiles by Platform"
+        />
+        <MenuInternalLinkItem
           href="/subsets/analysispipeline-subsets"
           label="CNV Profiles by Analysis Pipeline"
         />
