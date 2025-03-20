@@ -9,6 +9,9 @@
     parameters or data source.
   img: /img/BeaconBracketQuery-limited-match-graphics.png
   parameters:
+    datasetIds:
+      isHidden: false
+      defaultValue: ["refcnv"]
     referenceName:
       isHidden: false
       defaultValue: "refseq:NC_000009.12"
@@ -40,6 +43,9 @@
     The exact variants which were being found can be retrieved through the variant
     handover [H—>O] link.
   parameters:
+    datasetIds:
+      isHidden: false
+      defaultValue: ["refcnv"]
     referenceName:
       isHidden: false
       defaultValue: "refseq:NC_000017.11"
@@ -67,7 +73,10 @@
   parameters:
     datasetIds:
       isHidden: false
-      defaultValue: ["cellz"]
+      defaultValue: ["refcnv"]
+    datasetIds:
+      isHidden: false
+      defaultValue: ["refcnv"]
     geneId:
       isHidden: false
       defaultValue: CDK2
