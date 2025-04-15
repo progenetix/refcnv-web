@@ -107,16 +107,12 @@
       isHidden: true
     allTermsFilters:
       isHidden: false
-    includeDescendantTerms:
-      isHidden: false
     sex:
-      isHidden: false
-    materialtype:
       isHidden: false
     referenceid:
       isHidden: false
     cohorts:
-      isHidden: true
+      isHidden: false
   examples: []
 
 - label: "Short Form"
@@ -180,8 +176,6 @@
     accessid:
       isHidden: false
     allTermsFilters:
-      isHidden: false
-    includeDescendantTerms:
       isHidden: false
     geoCity:
       isHidden: false

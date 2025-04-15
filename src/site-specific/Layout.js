@@ -52,7 +52,7 @@ export function Layout({ title, headline, children }) {
       </main>
       <footer className="footer">
         <div className="content container has-text-centered">
-          © 2000 - {THISYEAR} refCNV Cancer Genomics Information Resource by
+          © 2024 - {THISYEAR} refCNV Cancer Genomics Information Resource by
           the{" "}
           <a href={SITE_DEFAULTS.ORGSITELINK}>
             Computational Oncogenomics Group
