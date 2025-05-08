@@ -6,18 +6,6 @@ import { SubsetHistogram, BiosamplePlot } from "../components/SVGloaders"
 import React from "react"
 import { SITE_DEFAULTS } from "../hooks/api"
 
-// const imgFocal = {
-//   float: "right",
-//   width: "300px",
-//   border: "0px",
-//   margin: "-35px -20px -10px 10px"
-// }
-
-// const histoLegend = {
-//   margin: "-4px 0px 18px 0px",
-//   display: "block"
-// }
-
 export default function Index() {
 
   return (
