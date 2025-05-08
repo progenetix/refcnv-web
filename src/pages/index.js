@@ -57,7 +57,11 @@ export default function Index() {
       profile from the one used in your study. The plot below shows analysis specific
       CNV tracks for chromosome 13 in the HG01572 sample from the 1000 Genomes set,
       for several calling pipelines.
-      <BiosamplePlot biosid="onekgbs-HG01572" datasetIds={SITE_DEFAULTS.DATASETID} plotChros="13" />
+      <BiosamplePlot
+        biosid="onekgbs-HG01572"
+        datasetIds={SITE_DEFAULTS.DATASETID}
+        plotPars="plotLabelcolWidth=400::plotChros=13"
+      />
       Please be aware that the small size of most CNVs is not correctly represented
       at this zoom level (overplotting due to limited resolution). 
     </p>
