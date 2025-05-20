@@ -2,11 +2,14 @@ import React, { useState } from "react"
 import cn from "classnames"
 import { FaBars, FaTimes } from "react-icons/fa"
 import { ErrorBoundary } from "react-error-boundary"
+import { MarkdownParser } from "../components/MarkdownParser"
 import Head from "next/head"
 import {ErrorFallback, MenuInternalLinkItem} from "../components/MenuHelpers"
-import { SITE_DEFAULTS, THISYEAR } from "../hooks/api"
+import Panel from "../components/Panel"
+import { THISYEAR } from "../hooks/api"
+import layoutConfig from "../site-specific/layout.yaml"
 
-export function Layout({ title, headline, children }) {
+export function Layout({ title, headline, leadPanelMarkdown, tailPanelMarkdown, children }) {
   const [sideOpen, setSideOpen] = useState(false)
   return (
     <div className="Layout__app">
@@ -45,18 +48,26 @@ export function Layout({ title, headline, children }) {
                 // reset the state of your app so the error doesn't happen again
               }}
             >
+              {leadPanelMarkdown && (
+                <Panel heading="" className="content">
+                  {MarkdownParser(leadPanelMarkdown)}
+                </Panel>
+              )}
               {children}
+              {tailPanelMarkdown && (
+                <Panel heading="" className="content">
+                  {MarkdownParser(tailPanelMarkdown)}
+                </Panel>
+              )}
             </ErrorBoundary>
           </div>
         </div>
       </main>
       <footer className="footer">
         <div className="content container has-text-centered">
-          © 2024 - {THISYEAR} refCNV Cancer Genomics Information Resource by
+          © {layoutConfig.sitePars.firstYear} - {THISYEAR} {layoutConfig.sitePars.longName} by
           the{" "}
-          <a href={SITE_DEFAULTS.ORGSITELINK}>
-            Computational Oncogenomics Group
-          </a>{" "}
+          <a href={layoutConfig.sitePars.orgSiteLink}>{layoutConfig.sitePars.orgSiteLabel}</a>{" "}
           at the{" "}
           <a href="https://www.mls.uzh.ch/en/research/baudis/">
             University of Zurich
@@ -73,7 +84,7 @@ export function Layout({ title, headline, children }) {
           </a>
           <br />
           No responsibility is taken for the correctness of the data presented
-          nor the results achieved with the refCNV tools.
+          nor the results achieved with the Progenetix tools.
         </div>
       </footer>
     </div>
@@ -81,38 +92,25 @@ export function Layout({ title, headline, children }) {
 }
 
 function Side({ onClick }) {
+
   return (
     <div onClick={onClick}>
       <a href="/">
         <img
           className="Layout__side-logo"
-          src="/img/refcnv-logo-360x160.png"
-          alt="refCNV"
+          src={layoutConfig.sitePars.siteLogo}
+          alt={layoutConfig.sitePars.siteLogoAlt}
         />
       </a>
       <ul className="Layout__side__items">
-        <MenuInternalLinkItem
-          href="/subsets/platform-subsets"
-          label="CNV Profiles by Platform"
-        />
-        <MenuInternalLinkItem
-          href="/subsets/analysispipeline-subsets"
-          label="CNV Profiles by Analysis Pipeline"
-        />
-        <MenuInternalLinkItem href="/search/" label="Search Samples" />
-        <MenuInternalLinkItem
-          href="https://beaconplus.progenetix.org/"
-          label={
-            <>
-              Beacon<sup style={{ color: "red" }}>+</sup>
-            </>
-          }
-        />
-        <MenuInternalLinkItem href={SITE_DEFAULTS.MASTERDOCLINK} label="Documentation" />
-        <MenuInternalLinkItem
-          href={SITE_DEFAULTS.ORGSITELINK}
-          label="Baudisgroup @ UZH"
-        />
+        {layoutConfig.layoutSideItems.map((item, i) => (
+          <MenuInternalLinkItem
+            key={i}
+            href={item.href}
+            label={item.label}
+            isSub={item.isSub}
+          />
+        ))}
       </ul>
     </div>
   )

@@ -1,14 +1,2 @@
 ---
 []
-# Placeholder example...
-# - label: "Lung Cancers"
-#   note: "Lung cancers with different histological types"
-#   description: |
-#     This example shows CNV frequency profiles for different lung cancer types.
-#   parameters:
-#     bioontology:
-#       defaultValue:
-#         - NCIT:C3512
-#         - NCIT:C3493
-#         - NCIT:C4450
-#         - NCIT:C4917

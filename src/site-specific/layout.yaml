@@ -1,0 +1,28 @@
+sitePars:
+  longName: refCNV Genomics Information Resource
+  firstYear: 2024
+  orgSiteLink: https://baudisgroup.org/
+  orgSiteLabel: Computational Oncogenomics Group
+  siteLogo: /img/refcnv-logo-360x160.png
+  siteLogoAlt: refCNV
+  docLink: https://docs.refcnv.org
+
+layoutSideItems:
+  - href: /subsetsSearch/
+    label: Compare CNV Profiles
+  - href: /subsets/platform-subsets/
+    label: CNV Profiles by Platform
+    isSub: isSub
+  - href: /subsets/analysispipeline-subsets/
+    label: CNV Profiles by Analysis Pipeline
+    isSub: isSub
+  - href: /search/
+    label: Search Samples
+  - href: /OpenAPI
+    label: OpenAPI Paths and Examples
+  - href: https://docs.refcnv.org
+    label: Documentation
+  - href: https://progenetix.org/
+    label: Progenetix
+  - href: https://baudisgroup.org/
+    label: Baudisgroup @ UZH
