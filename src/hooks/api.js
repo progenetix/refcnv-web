@@ -82,7 +82,7 @@ export function urlRetrieveIds(urlQuery) {
 export function useBeaconQuery(queryData) {
   return useProgenetixApi(
     queryData
-      ? `${basePath}beacon/biosamples/?includeHandovers=true&requestedGranularity=count&${buildQueryParameters(queryData)}`
+      ? `${basePath}beacon/biosamples/?includeHandovers=true&requestedGranularity=aggregated&${buildQueryParameters(queryData)}`
       : null
   )
 }
@@ -140,7 +140,11 @@ export function makeFilters({
   analysisOperation,
   cohorts,
   sex,
-  materialtype
+  materialtype,
+  ageAtDiagnosis,
+  followupTime,
+  followupState,
+  freeFilters
 }) {
   return [
     ...(allTermsFilters ?? []),
@@ -149,8 +153,12 @@ export function makeFilters({
     ...(referenceid ?? []),
     ...(cohorts ? [cohorts] : []),
     ...(analysisOperation ? [analysisOperation] : []),
+    ...(materialtype ? [materialtype] : []),
     ...(sex ? [sex] : []),
-    ...(materialtype ? [materialtype] : [])
+    ...(ageAtDiagnosis ? ["ageAtDiagnosis:"+ageAtDiagnosis] : []),
+    ...(followupTime ? ["followupTime:"+followupTime] : []),
+    ...(followupState ? [followupState] : []),
+    ...(freeFilters ? freeFilters.split(",") : [])
   ]
 }
 
@@ -163,7 +171,11 @@ export function buildFilterParameters(queryData) {
     sex,
     materialtype,
     allTermsFilters,
-    clinicalClasses
+    clinicalClasses,
+    ageAtDiagnosis,
+    followupTime,
+    followupState,
+    freeFilters
   } = queryData
 
   const filters = makeFilters({
@@ -174,7 +186,11 @@ export function buildFilterParameters(queryData) {
     cohorts,
     analysisOperation,
     sex,
-    materialtype
+    materialtype,
+    ageAtDiagnosis,
+    followupTime,
+    followupState,
+    freeFilters
   })
   return new URLSearchParams(
     flattenParams([
@@ -194,6 +210,10 @@ export function buildQueryParameters(queryData) {
     sex,
     materialtype,
     allTermsFilters,
+    ageAtDiagnosis,
+    followupTime,
+    followupState,
+    freeFilters,
     clinicalClasses,
     geoCity,
     geodistanceKm,
@@ -227,7 +247,11 @@ export function buildQueryParameters(queryData) {
     cohorts,
     analysisOperation,
     sex,
-    materialtype
+    materialtype,
+    ageAtDiagnosis,
+    followupTime,
+    followupState,
+    freeFilters
   })
   const geoParams = mkGeoParams(geoCity, geodistanceKm) ?? {}
   return new URLSearchParams(
@@ -396,6 +420,9 @@ export function useSubsethistogram({
 
 
 export function useCollationsById({ datasetIds }) {
+  if (! datasetIds) {
+    datasetIds = DATASETDEFAULT
+  }
   const { data, ...other } = useFiltersByType({
     collationTypes: "",
     datasetIds
@@ -417,12 +444,18 @@ export function useCollationsById({ datasetIds }) {
 
 export function useFiltersByType({ datasetIds, collationTypes }) {
   // TODO: construct URL w/o optional parameters if empty
+  if (! datasetIds) {
+    datasetIds = DATASETDEFAULT
+  }
   const url = `${basePath}beacon/datasets/${datasetIds}/filtering_terms/?collationTypes=${collationTypes}`
   return useProgenetixApi(url)
 }
 
 // general site listings for collations etc. are bound to the default dataset
 export function useFilterTreesByType({ datasetIds, collationTypes }) {
+  if (! datasetIds) {
+    datasetIds = DATASETDEFAULT
+  }
   const url = `${basePath}beacon/datasets/${datasetIds}/filtering_terms?collationTypes=${collationTypes}&mode=termTree`
   return useProgenetixApi(url)
 }

@@ -12,9 +12,10 @@ import { useContainerDimensions } from "../../hooks/containerDimensions"
 import SVGloader from "../SVGloaders"
 import { ExternalLink } from "../helpersShared/linkHelpers"
 import { svgFetcher } from "../../hooks/fetcher"
-import BiosamplesStatsDataTable from "./BiosamplesStatsDataTable"
-import { WithData } from "../Loader"
+// import BiosamplesStatsDataTable from "./BiosamplesStatsDataTable"
+// import { WithData } from "../Loader"
 import { refseq2chro } from "../Chromosome"
+import { SummaryPlots } from "../summaries/SummaryPlots"
 
 const HANDOVER_IDS = {
   histoplot: "histoplot",
@@ -40,6 +41,7 @@ export function DatasetResultBox({ data: responseSet, responseMeta, query }) {
     id,
     resultsHandovers,
     info,
+    resultsAggregation,
     resultsCount
   } = responseSet
 
@@ -238,6 +240,10 @@ export function DatasetResultBox({ data: responseSet, responseMeta, query }) {
 
       <br/>
       <hr/>
+      <h2 className="subtitle has-text-dark">Matched {id} Data  Overview</h2>
+      <SummaryPlots resultsAggregation={resultsAggregation} filterUnknowns={true} />
+      <br/>
+      <hr/>
       <h2 className="subtitle has-text-dark">{id} Data Downloads</h2>
 
       {biosamplesTableHandover?.pages.length > 0 && (
@@ -326,9 +332,9 @@ export function DatasetResultBox({ data: responseSet, responseMeta, query }) {
 
 function ResultsTab({
   histoplotUrl,
-  biosamplesReply,
-  variantCount,
-  datasetId
+  // biosamplesReply,
+  // variantCount,
+  // datasetId
 }) {
   return (
     <div>
@@ -338,6 +344,7 @@ function ResultsTab({
           <ExternalLink href={histoplotUrl} label="Reload histogram in new window" />
         </div>
       )}
+      {/*
       <WithData
         apiReply={biosamplesReply}
         background
@@ -349,6 +356,8 @@ function ResultsTab({
           />
         )}
       />
+      */}
+
     </div>
   )
 }
@@ -377,15 +386,13 @@ function UCSCRegion({ query }) {
 
 function ucscHref(query) {
 
-  let ucscstart = query.start
-  let ucscend = query.end
-  if (query.start > 0) {
-    ucscstart = query.start
-    ucscend = query.start
-  }
+  let ucscpos = query.start + "," + query.end
+  ucscpos = ucscpos.split(",").filter(Number)
+  let start = Math.min.apply(Math, ucscpos)
+  let end = Math.max.apply(Math, ucscpos)
   let chro = refseq2chro(query.referenceName)
 
-  return `http://www.genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr${chro}%3A${ucscstart}%2D${ucscend}`
+  return `http://www.genome.ucsc.edu/cgi-bin/hgTracks?db=hg38&position=chr${chro}%3A${start}%2D${end}`
 }
 
 function PagedLink({ handover }) {
